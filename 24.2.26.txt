@@ -1,0 +1,131 @@
+
+                           24.02.26
+
+
+	1.from collections import OrderedDict
+	  num = [1, 2, 3, 2, 1, 4, 5, 4]
+	  result = list(OrderedDict.fromkeys(num))
+ 	  print(result) 
+
+	output:[1, 2, 3, 4, 5]
+
+	
+	2.from collections import OrderedDict
+	  a= input("Enter the numbers  ")
+	  numbers = [int(x) for x in a.split()]
+	  b = list(OrderedDict.fromkeys(numbers))
+	  b.sort()
+	  if len(b) < 2:
+ 	     print("Not Available")
+	  else:
+    	     print("Second Largest Unique Number:",b[-2])
+
+	output:Enter the numbers  22 44 66
+	       Second Largest Unique Number: 44
+
+	3.from collections import Counter
+	  a = input("Enter the numbers : ")
+	  numbers = [int(x) for x in a.split()]
+ 	  b = Counter(numbers)
+	  for num, count in b.items():
+  	     print(f"{num}: {count}")
+
+
+	output:Enter the numbers :Enter the numbers :Enter the numbers :1 1 2 2 2 3 3 3 3 4 4 4 4 4 5 5 5 5 5 5 
+                                                                        1: 2
+                                                                        2: 3
+                                                                        3: 4
+                                                                        4: 5
+                                                                        5: 6
+4)      from collections import deque
+	a = (1, 2, 3, 4)
+	n = deque(a)
+	n[0], n[-1] = n[-1],n[0]
+	b=tuple(n)
+	print(b)
+	
+	output:(4, 2, 3, 1)
+
+5)      from collections import deque
+	def a(tup):
+    		d = deque(tup)
+    		e= deque(reversed(d))
+    		return d == e
+	print(a((10, 20, 30, 20, 10)))
+
+	output:True
+6)	a = {1, 2, 3, 4, 5}
+	b = {4, 5, 6, 7, 8}
+	x= a.intersection(b)
+	y= a.union(b)
+	z =a.difference(b)
+	print(f"Intersection: {x}")
+	print(f"Union:        {y}")
+	print(f"Difference:   {z}")
+ 	
+	output:Intersection: {4, 5}
+	Union:        {1, 2, 3, 4, 5, 6, 7, 8}
+	Difference:   {1, 2, 3}
+
+7)	divisible_set = set()
+	for num in range(1, 101):
+    	    if num % 5 == 0 and num % 7 == 0:
+             divisible_set.add(num)
+	print(f"Set of numbers divisible by 5 and 7: {divisible_set}")
+
+	output:Set of numbers divisible by 5 and 7: {35, 70}
+
+8)	student_marks = {
+    		"Alice": 85,
+    		"Bob": 92,
+    		"Charlie": 78,
+    		"David": 95,
+    		"Eve": 88
+	}
+	top_student = max(student_marks, key=student_marks.get)
+	marks_values = student_marks.values()
+	average_mark = sum(marks_values) / len(marks_values)
+	print(f"Top Student: {top_student} ({student_marks[top_student]})")
+	print(f"Average Mark: {average_mark:.2f}")
+
+	output:Top Student: David (95)
+	Average Mark: 87.60
+
+9)   	a = "programming"
+	b= {}
+	for char in a:
+    	    b[char] = b.get(char, 0) + 1
+	print(f"Character Frequencies: {b}")
+
+	output:Character Frequencies: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1}
+
+10)   transactions = [
+     	 ("Laptop", 10),
+      	 ("Mouse", 50),
+      	 ("Laptop", -2),
+         ("Keyboard", 20),
+         ("Mouse", -10)
+      ]
+	inventory = {}
+	for product, quantity in transactions:
+    		inventory[product] = inventory.get(product, 0) + quantity
+	print("Final Inventory Stock:")
+	for item, stock in inventory.items():
+    		print(f"{item}: {stock} units")
+
+ 	output:Final Inventory Stock:
+	Laptop: 8 units
+	Mouse: 40 units
+	Keyboard: 20 units
+
+
+
+
+
+
+
+
+
+     
+
+
